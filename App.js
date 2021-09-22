@@ -12,9 +12,10 @@ function HelloWorldApp() {
           <RenderItem />
         </ScrollView>
       </View>
-      <View style={styles.viewCont2}>
+      
         <InputField />
-      </View>
+        {/* <View style={styles.viewCont2}>
+      </View> */}
     </View>
   )
 }
