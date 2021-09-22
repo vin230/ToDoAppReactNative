@@ -1,21 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import RenderItem from './src/components/RenderItem';
 import InputField from './src/components/InputField';
 
 function HelloWorldApp() {
+  const [data, setData] = useState(["cgvcg"]);
   return (
     <View style={styles.container}>
       <View style={styles.viewCont}>
         <Text style={styles.title}>TODAY'S TASKS</Text>
         <ScrollView>
-          <RenderItem />
+          <RenderItem data={data} />
         </ScrollView>
       </View>
-      
-        <InputField />
-        {/* <View style={styles.viewCont2}>
-      </View> */}
+      <InputField
+        onPress={() => alert('pressed')}
+      />
     </View>
   )
 }
@@ -38,11 +38,6 @@ const styles = StyleSheet.create({
     margin: 15,
     backgroundColor: 'white',
     borderRadius: 25,
-  },
-  viewCont2: {
-    flex: 0.15,
-    //backgroundColor:'pink',
-    justifyContent: 'center'
   }
 })
 

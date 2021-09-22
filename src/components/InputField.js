@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 
-const InputFieldArea = () => {
+const InputFieldArea = (props) => {
   return (
     <View style={styles.conatiner}>
       <TextInput 
       style={styles.input}
       placeholder="Type here..."
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={props.onPress}>
          <Text style={styles.btnTxt}>+</Text> 
       </TouchableOpacity>
     </View>

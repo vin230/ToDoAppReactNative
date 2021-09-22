@@ -1,26 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-const DATA = [
-    "cbdh",
-    "cbd",
-    "gjhj",
-    "hybhouguihuyu",
-    "gnjhhjhjhjhjhj",
-    "gvggghg",
-    "jhbhjbhjb",
-    "hbbhbhb",
-    "hgbjhbhb",
-    "hbhbh",
-    "hbjbnn",
-    "hbhbbhb",
-    "hgvghhj",
-    "vvvvv",
-]
-
-const RenderItem = () => {
+const RenderItem = (props) => {
     return (
-        DATA.map((data, index) => {
+        props.data.map((data, index) => {
             return(
             <View style={styles.conatiner} key={index}>
                 <Text style={styles.text}>{data}</Text>
