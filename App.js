@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import RenderItem from './src/components/RenderItem';
 import InputField from './src/components/InputField';
 
@@ -7,10 +7,13 @@ function HelloWorldApp() {
   return (
     <View style={styles.container}>
       <View style={styles.viewCont}>
-       <RenderItem/>
+        <Text style={styles.title}>TODAY'S TASKS</Text>
+        <ScrollView>
+          <RenderItem />
+        </ScrollView>
       </View>
       <View style={styles.viewCont2}>
-       <InputField/>
+        <InputField />
       </View>
     </View>
   )
@@ -23,16 +26,22 @@ const styles = StyleSheet.create({
     //alignItems: "center",
     backgroundColor: '#daf0ff'
   },
-  viewCont:{
-    flex:1,
-    margin:15,
-    backgroundColor:'white',
-    borderRadius:25,
+  title: {
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 5
   },
-  viewCont2:{
-    flex:0.15,
+  viewCont: {
+    flex: 1,
+    margin: 15,
+    backgroundColor: 'white',
+    borderRadius: 25,
+  },
+  viewCont2: {
+    flex: 0.15,
     //backgroundColor:'pink',
-    justifyContent:'center'
+    justifyContent: 'center'
   }
 })
 
