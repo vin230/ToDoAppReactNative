@@ -1,20 +1,45 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import RenderItem from './src/components/RenderItem';
 import InputField from './src/components/InputField';
 
 function HelloWorldApp() {
-  const [data, setData] = useState(["cgvcg"]);
+  const [data, setData] = useState(['aaaa']);
+  const [temp, setTemp] = useState();
+
+  function onChange(text) {
+    var newTask = text
+    setTemp(newTask);
+  }
+
+  function saveTask() {
+    setData(prevState => [...prevState, temp])
+    setTemp();
+  }
+
+  function deleteTask(item) {
+    console.log(item)
+    console.log('calling')
+    // data.filter(()=>{
+    //   return 
+    // })
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.viewCont}>
         <Text style={styles.title}>TODAY'S TASKS</Text>
         <ScrollView>
-          <RenderItem data={data} />
+          <RenderItem
+            data={data}
+            onPressItem={deleteTask}
+          />
         </ScrollView>
       </View>
       <InputField
-        onPress={() => alert('pressed')}
+        onPress={saveTask}
+        onChangeText={onChange}
+        value={temp}
       />
     </View>
   )

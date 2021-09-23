@@ -7,6 +7,8 @@ const InputFieldArea = (props) => {
       <TextInput 
       style={styles.input}
       placeholder="Type here..."
+      onChangeText={props.onChangeText}
+      value={props.value}
       />
       <TouchableOpacity style={styles.button} onPress={props.onPress}>
          <Text style={styles.btnTxt}>+</Text> 

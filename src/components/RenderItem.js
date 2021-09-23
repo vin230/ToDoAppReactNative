@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 const RenderItem = (props) => {
+    const DATA = props.data;
     return (
-        props.data.map((data, index) => {
+        DATA.slice(0).reverse().map((data, index) => {
             return(
             <View style={styles.conatiner} key={index}>
                 <Text style={styles.text}>{data}</Text>
-                <TouchableOpacity style={styles.delete}>
+                <TouchableOpacity style={styles.delete} onPress={props.onPressItem}>
                     <Text style={styles.deletTxt}>X</Text>
                 </TouchableOpacity>
             </View>
