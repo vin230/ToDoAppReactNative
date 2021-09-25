@@ -18,11 +18,10 @@ function HelloWorldApp() {
   }
 
   function deleteTask(item) {
-    console.log(item)
-    console.log('calling')
-    // data.filter(()=>{
-    //   return 
-    // })
+   const filtereddata = data.filter((data)=>{
+      return data !== item 
+    })
+    setData(filtereddata);
   }
 
   return (

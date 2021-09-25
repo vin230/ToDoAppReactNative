@@ -8,7 +8,7 @@ const RenderItem = (props) => {
             return(
             <View style={styles.conatiner} key={index}>
                 <Text style={styles.text}>{data}</Text>
-                <TouchableOpacity style={styles.delete} onPress={props.onPressItem}>
+                <TouchableOpacity style={styles.delete} onPress={()=>props.onPressItem(data)}>
                     <Text style={styles.deletTxt}>X</Text>
                 </TouchableOpacity>
             </View>
