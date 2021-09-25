@@ -4,7 +4,7 @@ import RenderItem from './src/components/RenderItem';
 import InputField from './src/components/InputField';
 
 function HelloWorldApp() {
-  const [data, setData] = useState(['aaaa']);
+  const [data, setData] = useState([]);
   const [temp, setTemp] = useState();
 
   function onChange(text) {
@@ -28,12 +28,17 @@ function HelloWorldApp() {
     <View style={styles.container}>
       <View style={styles.viewCont}>
         <Text style={styles.title}>TODAY'S TASKS</Text>
+        { (data.length !== 0) ?
         <ScrollView>
           <RenderItem
             data={data}
             onPressItem={deleteTask}
           />
-        </ScrollView>
+        </ScrollView>  :
+        <View style={styles.noData}>
+          <Text style={styles.noText}>No Task's Found</Text>
+        </View>
+        }
       </View>
       <InputField
         onPress={saveTask}
@@ -47,21 +52,28 @@ function HelloWorldApp() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //justifyContent: "center",
-    //alignItems: "center",
     backgroundColor: '#daf0ff'
   },
   title: {
     textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
-    margin: 5
+    margin: 5,
+    borderBottomWidth:0.5
   },
   viewCont: {
     flex: 1,
     margin: 15,
     backgroundColor: 'white',
     borderRadius: 25,
+  },
+  noData:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  noText:{
+    fontSize:14
   }
 })
 

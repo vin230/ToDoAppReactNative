@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 const RenderItem = (props) => {
     const DATA = props.data;
+    console.log(Object.entries(DATA).length);
     return (
         DATA.slice(0).reverse().map((data, index) => {
             return(
@@ -14,7 +15,7 @@ const RenderItem = (props) => {
             </View>
             )
         })
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         marginVertical: 10,
-        marginHorizontal: 20
+        marginLeft:20,
+        marginRight:30
     },
     delete: {
         position: 'absolute',
