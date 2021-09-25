@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import RenderItem from './src/components/RenderItem';
 import InputField from './src/components/InputField';
 
-function HelloWorldApp() {
+function ToDodApp() {
   const [data, setData] = useState([]);
   const [temp, setTemp] = useState();
 
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default HelloWorldApp;
+export default ToDodApp;
